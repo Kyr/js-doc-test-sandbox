@@ -11,13 +11,13 @@ var MODEL_NAME='account';
 */
 
 module.exports = {
-
-  attributes: {
 		schema: true,
 	  tableName: 'accounts',
 	  autoId: false,
 	  autoCreateAt: false,
 	  autoUpdatedAt: false,
+
+  attributes: {
 
 	  id: {
 		  id: true,
@@ -42,10 +42,10 @@ module.exports = {
 			model: 'Person'
 	  },
 
-	  history: {
-		  collection: 'History', via: 'model'
-
-	  }
+	  //history: {
+		 // collection: 'History', via: 'where'
+	  //
+	  //}
 
   },
 

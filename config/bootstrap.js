@@ -1,3 +1,7 @@
+"use strict";
+
+var jsDocTest = require('js-doc-test');
+
 /**
  * Bootstrap
  * (sails.config.bootstrap)
@@ -11,7 +15,20 @@
 
 module.exports.bootstrap = function(cb) {
 
+	console.log(sails.config.paths.models);
+	//files = fs.readdirSync(options.dirname);
+
+	//console.log('app:bootstrap', typeof sails.models);
+	var modelsModules = Object.keys(sails.models);
+	var testResult = modelsModules.map(function(moduleName){
+		var module = sails.models[moduleName];
+		return jsDocTest.test();
+	});
+
+
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
   cb();
+
+
 };

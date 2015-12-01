@@ -25,11 +25,12 @@ var EVENTS = {
 module.exports.History = {
 
 	events: EVENTS,
-  attributes: {
 		schema: true,
 	  tableName: 'notable_events',
 	  autoCreatedAt: false,
 	  autoUpdatedAt: false,
+
+  attributes: {
 
 	  who: {
 		  model: 'Account',
